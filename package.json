@@ -1,7 +1,7 @@
 {
   "name": "is-array-buffer",
   "description": "Check if the given value is an ArrayBuffer.",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "license": "MIT",
   "repository": "fengyuanchen/is-array-buffer",
   "author": {
