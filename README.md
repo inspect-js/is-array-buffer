@@ -2,30 +2,34 @@
 
 > Check if the given value is an [ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer).
 
+## Main
+
+```txt
+dist/
+├── is-array-buffer.js        (UMD)
+├── is-array-buffer.min.js    (UMD, compressed)
+├── is-array-buffer.common.js (CommonJS, default)
+└── is-array-buffer.esm.js    (ES Module)
+```
 
 ## Install
 
+```sh
+npm install --save is-array-buffer
 ```
-npm install is-array-buffer
-```
-
 
 ## Usage
 
 ```js
-var isArrayBuffer = require('is-array-buffer');
-
-isArrayBuffer();
-// > false
-
-isArrayBuffer(new Array());
-// > false
+import isArrayBuffer from 'is-array-buffer';
 
 isArrayBuffer(new ArrayBuffer());
-// > true
-```
+// => true
 
+isArrayBuffer(new Array());
+// => false
+```
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT) © [Fengyuan Chen](http://chenfengyuan.com)
+[MIT](http://opensource.org/licenses/MIT) © [Chen Fengyuan](http://chenfengyuan.com)
