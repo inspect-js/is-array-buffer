@@ -4,7 +4,7 @@
   "description": "Check if the given value is an ArrayBuffer.",
   "main": "dist/is-array-buffer.common.js",
   "module": "dist/is-array-buffer.esm.js",
-  "browser": "dist/is-array-buffer.js",
+  "unpkg": "dist/is-array-buffer.js",
   "license": "MIT",
   "homepage": "https://github.com/fengyuanchen/is-array-buffer",
   "repository": {
@@ -15,6 +15,10 @@
     "name": "Chen Fengyuan",
     "url": "http://chenfengyuan.com"
   },
+  "files": [
+    "src",
+    "dist"
+  ],
   "keywords": [
     "is",
     "array",
@@ -25,8 +29,7 @@
     "build": "rollup -c",
     "compress": "uglifyjs dist/is-array-buffer.js -o dist/is-array-buffer.min.js -c -m --comments /^!/",
     "lint": "eslint src",
-    "postbuild": "npm run test && npm run compress",
-    "prebuild": "npm run lint",
+    "release": "npm run lint && npm run build && npm run compress && npm run test",
     "test": "mocha"
   },
   "devDependencies": {
