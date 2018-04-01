@@ -1,14 +1,14 @@
 const hasArrayBuffer = typeof ArrayBuffer === 'function';
-const toString = Object.prototype.toString;
+const { toString } = Object.prototype;
 
 /**
  * Check if the given value is an ArrayBuffer.
  * @param {*} value - The value to check.
- * @returns {boolean} Returns `true` if the given is an ArrayBuffer, else `false`.
+ * @returns {boolean} Returns `true` if the given value is an ArrayBuffer, else `false`.
  * @example
  * isArrayBuffer(new ArrayBuffer())
  * // => true
- * isArrayBuffer(new Array())
+ * isArrayBuffer([])
  * // => false
  */
 export default function isArrayBuffer(value) {
