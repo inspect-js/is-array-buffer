@@ -1,10 +1,10 @@
-var assert = require('assert');
-var isArrayBuffer = require('./');
+const assert = require('assert');
+const isArrayBuffer = require('./');
 
-it('should return true if it is an ArrayBuffer', function () {
+it('should return true if it is an ArrayBuffer', () => {
   assert(isArrayBuffer(new ArrayBuffer()));
 });
 
-it('should return false if it is not an ArrayBuffer', function () {
-  assert(!isArrayBuffer(new Array()));
+it('should return false if it is not an ArrayBuffer', () => {
+  assert(!isArrayBuffer([]));
 });
