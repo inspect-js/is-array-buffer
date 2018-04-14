@@ -16,7 +16,7 @@ dist/
 
 ## Install
 
-```sh
+```shell
 npm install is-array-buffer
 ```
 
