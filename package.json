@@ -24,23 +24,25 @@
   ],
   "scripts": {
     "build": "rollup -c",
-    "compress": "uglifyjs dist/is-array-buffer.js -o dist/is-array-buffer.min.js -c -m --comments /^!/",
+    "compress": "uglifyjs dist/is-array-buffer.min.js -o dist/is-array-buffer.min.js -c -m --comments /^!/",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "lint": "eslint src *.js --fix",
     "release": "npm run lint && npm run build && npm run compress && npm run test",
     "test": "nyc mocha"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "codecov": "^3.0.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "change-case": "^3.0.2",
+    "codecov": "^3.0.2",
+    "create-banner": "^1.0.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.11.0",
-    "mocha": "^5.1.0",
-    "nyc": "^11.6.0",
-    "rollup": "^0.57.1",
-    "rollup-plugin-babel": "^3.0.3",
-    "uglify-js": "^3.3.21"
+    "eslint-plugin-import": "^2.12.0",
+    "mocha": "^5.2.0",
+    "nyc": "^11.8.0",
+    "rollup": "^0.59.1",
+    "rollup-plugin-babel": "^3.0.4",
+    "uglify-js": "^3.3.26"
   }
 }
