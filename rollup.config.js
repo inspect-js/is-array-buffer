@@ -5,7 +5,7 @@ const pkg = require('./package');
 
 const name = changeCase.camelCase(pkg.name);
 
-export default {
+module.exports = {
   input: 'src/index.js',
   output: [
     {
