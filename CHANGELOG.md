@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.0.0 (Feb 12, 2021)
+
+- Refactor in TypeScript.
+- Drop the `dist` directory.
+- Drop the UMD bundled file.
+- Add a declaration file for TypeScript.
+
 ## 1.0.1 (Apr 1, 2018)
 
 - Improve code style.
