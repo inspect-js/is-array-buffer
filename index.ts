@@ -1,15 +1,5 @@
-/*!
- * isArrayBuffer v1.0.1
- * https://github.com/fengyuanchen/is-array-buffer
- *
- * Copyright (c) 2015-2018 Chen Fengyuan
- * Released under the MIT license
- *
- * Date: 2018-04-01T07:19:08.136Z
- */
-
-var hasArrayBuffer = typeof ArrayBuffer === 'function';
-var toString = Object.prototype.toString;
+const hasArrayBuffer = typeof ArrayBuffer === 'function';
+const { toString } = Object.prototype;
 
 /**
  * Check if the given value is an ArrayBuffer.
@@ -21,9 +11,6 @@ var toString = Object.prototype.toString;
  * isArrayBuffer([])
  * // => false
  */
-
-function isArrayBuffer(value) {
+export default function isArrayBuffer(value: unknown): boolean {
   return hasArrayBuffer && (value instanceof ArrayBuffer || toString.call(value) === '[object ArrayBuffer]');
 }
-
-export default isArrayBuffer;

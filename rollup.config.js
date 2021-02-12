@@ -1,46 +1,20 @@
-const babel = require('rollup-plugin-babel');
-const changeCase = require('change-case');
-const createBanner = require('create-banner');
-const pkg = require('./package');
+import typescript from '@rollup/plugin-typescript';
+import pkg from './package.json';
 
-const name = changeCase.camelCase(pkg.name);
-
-module.exports = {
-  input: 'src/index.js',
+export default {
+  input: 'index.ts',
   output: [
     {
-      name,
-      banner: createBanner({
-        data: {
-          name,
-          year: '2015-present',
-        },
-      }),
-      file: `dist/${pkg.name}.js`,
-      format: 'umd',
-    },
-    {
-      name,
-      banner: createBanner({
-        data: {
-          name,
-          year: '2015-present',
-        },
-        template: 'inline',
-      }),
-      file: `dist/${pkg.name}.min.js`,
-      format: 'umd',
-    },
-    {
-      file: `dist/${pkg.name}.common.js`,
       format: 'cjs',
+      file: pkg.main,
+      exports: 'auto',
     },
     {
-      file: `dist/${pkg.name}.esm.js`,
       format: 'esm',
+      file: pkg.module,
     },
   ],
   plugins: [
-    babel(),
+    typescript(),
   ],
 };

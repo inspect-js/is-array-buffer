@@ -1,48 +1,50 @@
 {
   "name": "is-array-buffer",
-  "version": "1.0.1",
   "description": "Check if the given value is an ArrayBuffer.",
-  "main": "dist/is-array-buffer.common.js",
-  "module": "dist/is-array-buffer.esm.js",
-  "unpkg": "dist/is-array-buffer.js",
-  "repository": "fengyuanchen/is-array-buffer",
-  "homepage": "https://github.com/fengyuanchen/is-array-buffer",
-  "license": "MIT",
-  "author": {
-    "name": "Chen Fengyuan",
-    "url": "http://chenfengyuan.com"
-  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "module": "index.esm.js",
+  "types": "index.d.ts",
   "files": [
-    "src",
-    "dist"
+    "index.js",
+    "index.esm.js",
+    "index.d.ts"
   ],
+  "scripts": {
+    "build": "rollup -c",
+    "build:dts": "tsc --declaration --emitDeclarationOnly",
+    "clean": "del-cli index.js index.esm.js index.d.ts",
+    "lint": "eslint . --ext .js,.ts --fix",
+    "release": "npm run clean && npm run lint && npm run build && npm run build:dts && npm test",
+    "test": "nyc mocha",
+    "test:coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fengyuanchen/is-array-buffer.git"
+  },
   "keywords": [
     "is",
     "array",
     "buffer",
     "ArrayBuffer"
   ],
-  "scripts": {
-    "build": "rollup -c",
-    "compress": "uglifyjs dist/is-array-buffer.min.js -o dist/is-array-buffer.min.js -c -m --comments /^!/",
-    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
-    "lint": "eslint src *.js --fix",
-    "release": "npm run lint && npm run build && npm run compress && npm run test",
-    "test": "nyc mocha"
-  },
+  "author": "Chen Fengyuan (https://chenfengyuan.com/)",
+  "license": "MIT",
+  "bugs": "https://github.com/fengyuanchen/is-array-buffer/issues",
+  "homepage": "https://github.com/fengyuanchen/is-array-buffer/#readme",
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "change-case": "^3.0.2",
-    "codecov": "^3.0.2",
-    "create-banner": "^1.0.0",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.12.0",
-    "mocha": "^5.2.0",
-    "nyc": "^11.8.0",
-    "rollup": "^0.59.1",
-    "rollup-plugin-babel": "^3.0.4",
-    "uglify-js": "^3.3.26"
+    "@rollup/plugin-typescript": "^8.1.1",
+    "@typescript-eslint/eslint-plugin": "^4.15.0",
+    "@typescript-eslint/parser": "^4.15.0",
+    "codecov": "^3.8.1",
+    "del-cli": "^3.0.1",
+    "eslint": "^7.19.0",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-plugin-import": "^2.22.1",
+    "mocha": "^8.3.0",
+    "nyc": "^15.1.0",
+    "rollup": "^2.38.5",
+    "typescript": "^4.1.5"
   }
 }

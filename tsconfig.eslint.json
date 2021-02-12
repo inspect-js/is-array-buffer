@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig",
+  "include": [
+    ".eslintrc.js",
+    "index.ts",
+    "rollup.config.js",
+    "test.js"
+  ]
+}

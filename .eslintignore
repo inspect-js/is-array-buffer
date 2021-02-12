@@ -1,7 +1,6 @@
 *.local*
 *.log
 *.map
-.DS_Store
 .nyc_output
 coverage
 dist

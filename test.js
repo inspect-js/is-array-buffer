@@ -1,5 +1,5 @@
 const assert = require('assert');
-const isArrayBuffer = require('./');
+const isArrayBuffer = require('.');
 
 describe('is-array-buffer', () => {
   it('should return true if it is an ArrayBuffer', () => {
