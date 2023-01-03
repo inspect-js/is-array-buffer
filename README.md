@@ -1,40 +1,56 @@
-# is-array-buffer
+# is-array-buffer <sup>[![Version Badge][npm-version-svg]][package-url]</sup>
 
-[![Build Status](https://img.shields.io/github/workflow/status/fengyuanchen/is-array-buffer/ci/main.svg)](https://github.com/fengyuanchen/is-array-buffer/actions) [![Coverage Status](https://img.shields.io/codecov/c/github/fengyuanchen/is-array-buffer.svg)](https://codecov.io/gh/fengyuanchen/is-array-buffer) [![Downloads](https://img.shields.io/npm/dm/is-array-buffer.svg)](https://www.npmjs.com/package/is-array-buffer) [![Version](https://img.shields.io/npm/v/is-array-buffer.svg)](https://www.npmjs.com/package/is-array-buffer) [![Gzip Size](https://img.shields.io/bundlephobia/minzip/is-array-buffer.svg)](https://unpkg.com/is-array-buffer/index.js) [![Dependencies](https://img.shields.io/david/fengyuanchen/is-array-buffer.svg)](https://www.npmjs.com/package/is-array-buffer)
+[![github actions][actions-image]][actions-url]
+[![coverage][codecov-image]][codecov-url]
+[![License][license-image]][license-url]
+[![Downloads][downloads-image]][downloads-url]
 
-> Check if the given value is an [ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer).
+[![npm badge][npm-badge-png]][package-url]
 
-## Main files
+Is this value a JS ArrayBuffer? This module works cross-realm/iframe, does not depend on `instanceof` or mutable properties, and despite ES6 Symbol.toStringTag.
 
-```text
-/
-├── index.js         (CommonJS, default)
-├── index.esm.js     (ECMAScript Module)
-└── index.d.ts       (TypeScript Declaration File)
-```
-
-## Install
-
-```shell
-npm install is-array-buffer
-```
-
-## Usage
+## Example
 
 ```js
-import isArrayBuffer from 'is-array-buffer';
+var assert = require('assert');
+var isArrayBuffer = require('is-array-buffer');
 
-isArrayBuffer(new ArrayBuffer());
-// > true
+assert(!isArrayBuffer(function () {}));
+assert(!isArrayBuffer(null));
+assert(!isArrayBuffer(function* () { yield 42; return Infinity; });
+assert(!isArrayBuffer(Symbol('foo')));
+assert(!isArrayBuffer(1n));
+assert(!isArrayBuffer(Object(1n)));
 
-isArrayBuffer([]);
-// > false
+assert(!isArrayBuffer(new Set()));
+assert(!isArrayBuffer(new WeakSet()));
+assert(!isArrayBuffer(new Map()));
+assert(!isArrayBuffer(new WeakMap()));
+assert(!isArrayBuffer(new WeakRef({})));
+assert(!isArrayBuffer(new FinalizationRegistry(() => {})));
+assert(!isArrayBuffer(new SharedArrayBuffer()));
+
+assert(isArrayBuffer(new ArrayBuffer()));
+
+class MyArrayBuffer extends ArrayBuffer {}
+assert(isArrayBuffer(new MyArrayBuffer()));
 ```
 
-## Versioning
+## Tests
+Simply clone the repo, `npm install`, and run `npm test`
 
-Maintained under the [Semantic Versioning guidelines](https://semver.org/).
-
-## License
-
-[MIT](https://opensource.org/licenses/MIT) © [Chen Fengyuan](https://chenfengyuan.com/)
+[package-url]: https://npmjs.org/package/is-array-buffer
+[npm-version-svg]: https://versionbadg.es/inspect-js/is-array-buffer.svg
+[deps-svg]: https://david-dm.org/inspect-js/is-array-buffer.svg
+[deps-url]: https://david-dm.org/inspect-js/is-array-buffer
+[dev-deps-svg]: https://david-dm.org/inspect-js/is-array-buffer/dev-status.svg
+[dev-deps-url]: https://david-dm.org/inspect-js/is-array-buffer#info=devDependencies
+[npm-badge-png]: https://nodei.co/npm/is-array-buffer.png?downloads=true&stars=true
+[license-image]: https://img.shields.io/npm/l/is-array-buffer.svg
+[license-url]: LICENSE
+[downloads-image]: https://img.shields.io/npm/dm/is-array-buffer.svg
+[downloads-url]: https://npm-stat.com/charts.html?package=is-array-buffer
+[codecov-image]: https://codecov.io/gh/inspect-js/is-array-buffer/branch/main/graphs/badge.svg
+[codecov-url]: https://app.codecov.io/gh/inspect-js/is-array-buffer/
+[actions-image]: https://img.shields.io/endpoint?url=https://github-actions-badge-u3jn4tfpocch.runkit.sh/inspect-js/is-array-buffer
+[actions-url]: https://github.com/inspect-js/is-array-buffer/actions
