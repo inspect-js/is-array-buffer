@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v3.0.1](https://github.com/fengyuanchen/is-array-buffer/compare/v3.0.0...v3.0.1) - 2023-01-05
+
+### Commits
+
+- [Fix] in node 0.8, TAs do not coerce Uint8Arrays to an ArrayBuffer properly [`e488763`](https://github.com/fengyuanchen/is-array-buffer/commit/e48876346f446825dad619e55dcc830ed93f2853)
+- [Dev Deps] update `@ljharb/eslint-config`, `aud` [`8eebfa2`](https://github.com/fengyuanchen/is-array-buffer/commit/8eebfa21881f3a9fa5094f8c486f00e496658ea9)
+
 ## [v3.0.0](https://github.com/fengyuanchen/is-array-buffer/compare/v2.0.0...v3.0.0) - 2023-01-04
 
 ### Commits
