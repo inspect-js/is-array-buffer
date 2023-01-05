@@ -4,6 +4,7 @@ var test = require('tape');
 var inspect = require('object-inspect');
 var forEach = require('for-each');
 var v = require('es-value-fixtures');
+var availableTypedArrays = require('available-typed-arrays')();
 
 var isArrayBuffer = require('..');
 
@@ -22,6 +23,16 @@ test('isArrayBuffer', function (t) {
 		var ab = new ArrayBuffer();
 
 		st.equal(isArrayBuffer(ab), true, inspect(ab) + ' is an ArrayBuffer');
+
+		st.end();
+	});
+
+	t.test('Typed Arrays', { skip: availableTypedArrays.length === 0 }, function (st) {
+		forEach(availableTypedArrays, function (TypedArray) {
+			var ta = new global[TypedArray](0);
+			st.equal(isArrayBuffer(ta.buffer), true, inspect(ta.buffer) + ', the TA\'s buffer, is an ArrayBuffer');
+			st.equal(isArrayBuffer(ta), false, inspect(ta) + ' is not an ArrayBuffer');
+		});
 
 		st.end();
 	});

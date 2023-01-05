@@ -3,6 +3,7 @@
 var callBind = require('call-bind');
 var callBound = require('call-bind/callBound');
 var GetIntrinsic = require('get-intrinsic');
+var isTypedArray = require('is-typed-array');
 
 var $ArrayBuffer = GetIntrinsic('ArrayBuffer', true);
 var $Float32Array = GetIntrinsic('Float32Array', true);
@@ -32,7 +33,7 @@ module.exports = $byteLength || $abSlice
 		// in node 0.8, ArrayBuffers have no prototype or own methods
 		? function IsArrayBuffer(obj) {
 			try {
-				return (new $Float32Array(obj)).buffer === obj;
+				return (new $Float32Array(obj)).buffer === obj && !isTypedArray(obj);
 			} catch (e) {
 				return false;
 			}
