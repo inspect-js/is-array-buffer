@@ -1,6 +1,6 @@
 {
 	"name": "is-array-buffer",
-	"version": "3.0.1",
+	"version": "3.0.2",
 	"description": "Is this value a JS ArrayBuffer?",
 	"main": "index.js",
 	"exports": {
