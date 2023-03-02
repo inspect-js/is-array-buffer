@@ -52,9 +52,9 @@
 		"in-publish": "^2.0.1",
 		"npmignore": "^0.3.0",
 		"nyc": "^10.3.2",
-		"object-inspect": "^1.12.2",
+		"object-inspect": "^1.12.3",
 		"safe-publish-latest": "^2.0.0",
-		"tape": "^5.6.1"
+		"tape": "^5.6.3"
 	},
 	"auto-changelog": {
 		"output": "CHANGELOG.md",
