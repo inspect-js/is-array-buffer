@@ -26,6 +26,9 @@ test('isArrayBuffer', function (t) {
 		var ab42 = new ArrayBuffer(42);
 		st.equal(isArrayBuffer(ab42), true, inspect(ab42) + ' is an ArrayBuffer');
 
+		var dv = new DataView(ab42);
+		st.equal(isArrayBuffer(dv), false, inspect(dv) + ' is not an ArrayBuffer');
+
 		st.end();
 	});
 
