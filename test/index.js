@@ -11,15 +11,19 @@ var isArrayBuffer = require('..');
 test('isArrayBuffer', function (t) {
 	t.equal(typeof isArrayBuffer, 'function', 'is a function');
 
-	var nonABs = v.primitives.concat(
+	/** @type {unknown[]} */
+	var nonABs = [].concat(
+		// @ts-expect-error TS sucks with [].concat
+		v.primitives,
 		v.objects,
-		typeof SharedArrayBuffer === 'function' ? new SharedArrayBuffer() : []
+		typeof SharedArrayBuffer === 'function' ? new SharedArrayBuffer(0) : []
 	);
 	forEach(nonABs, function (nonAB) {
 		t.equal(isArrayBuffer(nonAB), false, inspect(nonAB) + ' is not an ArrayBuffer');
 	});
 
 	t.test('actual ArrayBuffer instances', { skip: typeof ArrayBuffer === 'undefined' }, function (st) {
+		// @ts-expect-error TS grumbles about 0 args
 		var ab = new ArrayBuffer();
 		st.equal(isArrayBuffer(ab), true, inspect(ab) + ' is an ArrayBuffer');
 
