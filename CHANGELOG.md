@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v3.0.4](https://github.com/fengyuanchen/is-array-buffer/compare/v3.0.3...v3.0.4) - 2024-02-02
+
+### Commits
+
+- [patch] add types [`15fab4c`](https://github.com/fengyuanchen/is-array-buffer/commit/15fab4c68378904a12592969042e638dbc6be8e5)
+
 ## [v3.0.3](https://github.com/fengyuanchen/is-array-buffer/compare/v3.0.2...v3.0.3) - 2024-02-02
 
 ### Commits
