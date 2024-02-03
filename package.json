@@ -66,9 +66,9 @@
 		"startingVersion": "2.0.1"
 	},
 	"dependencies": {
-		"call-bind": "^1.0.2",
-		"get-intrinsic": "^1.2.1",
-		"is-typed-array": "^1.1.10"
+		"call-bind": "^1.0.5",
+		"get-intrinsic": "^1.2.2",
+		"is-typed-array": "^1.1.13"
 	},
 	"publishConfig": {
 		"ignore": [
