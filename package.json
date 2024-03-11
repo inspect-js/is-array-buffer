@@ -45,6 +45,7 @@
 	"homepage": "https://github.com/inspect-js/is-array-buffer#readme",
 	"devDependencies": {
 		"@ljharb/eslint-config": "^21.1.0",
+		"@ljharb/tsconfig": "^0.2.0",
 		"@types/call-bind": "^1.0.5",
 		"@types/es-value-fixtures": "^1.4.4",
 		"@types/for-each": "^0.3.3",

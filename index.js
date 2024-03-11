@@ -37,6 +37,7 @@ module.exports = $byteLength || $abSlice
 		? function isArrayBuffer(obj) {
 			return $toString(obj) === '[object ArrayBuffer]';
 		}
+		// @ts-expect-error
 		: function isArrayBuffer(obj) { // eslint-disable-line no-unused-vars
 			return false;
 		};
