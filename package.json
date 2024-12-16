@@ -76,8 +76,8 @@
 		"startingVersion": "2.0.1"
 	},
 	"dependencies": {
-		"call-bind": "^1.0.7",
-		"get-intrinsic": "^1.2.4"
+		"call-bind": "^1.0.8",
+		"get-intrinsic": "^1.2.6"
 	},
 	"publishConfig": {
 		"ignore": [
