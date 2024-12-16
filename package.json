@@ -14,7 +14,7 @@
 		"prepublishOnly": "safe-publish-latest",
 		"prepublish": "not-in-publish || npm run prepublishOnly",
 		"lint": "eslint --ext=.js,.mjs .",
-		"postlint": "tsc -p .",
+		"postlint": "tsc && attw -P",
 		"pretest": "npm run lint",
 		"tests-only": "nyc tape 'test/**/*.js'",
 		"test": "npm run tests-only --",
@@ -44,6 +44,7 @@
 	},
 	"homepage": "https://github.com/inspect-js/is-array-buffer#readme",
 	"devDependencies": {
+		"@arethetypeswrong/cli": "^0.17.1",
 		"@ljharb/eslint-config": "^21.1.1",
 		"@ljharb/tsconfig": "^0.2.2",
 		"@types/call-bind": "^1.0.5",
