@@ -47,7 +47,6 @@
 		"@ljharb/eslint-config": "^21.1.1",
 		"@ljharb/tsconfig": "^0.2.2",
 		"@types/call-bind": "^1.0.5",
-		"@types/es-value-fixtures": "^1.4.4",
 		"@types/for-each": "^0.3.3",
 		"@types/get-intrinsic": "^1.2.3",
 		"@types/object-inspect": "^1.13.0",
