@@ -77,6 +77,7 @@
 	},
 	"dependencies": {
 		"call-bind": "^1.0.8",
+		"call-bound": "^1.0.3",
 		"get-intrinsic": "^1.2.6"
 	},
 	"publishConfig": {

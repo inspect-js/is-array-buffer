@@ -1,7 +1,7 @@
 'use strict';
 
 var callBind = require('call-bind');
-var callBound = require('call-bind/callBound');
+var callBound = require('call-bound');
 var GetIntrinsic = require('get-intrinsic');
 
 var $ArrayBuffer = GetIntrinsic('%ArrayBuffer%', true);
